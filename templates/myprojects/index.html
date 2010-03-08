@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="/media/projects.css"/>
+{% endblock %}
+
+{% block title %}Projects - {{block.super}}{%endblock %}
+{% block smalltitle %}projects{% endblock %}
+
+{% block bodyclasses %}projects{% endblock %}
+
+{% block content %}
+    {% for obj in projects %}
+    <div class="project">
+        <div class="project-image">
+            <a href="{{obj.get_absolute_url}}">
+                <img src="{{obj.image.url}}" title="{{obj.title}}"/>
+            </a>
+        </div>
+        <div class="project-body">
+            <div class="name"><a href="{{obj.get_absolute_url}}">{{obj.title}}</a></div>
+            <div class="time">{{ obj.time|date:"M d, Y"}}</div>
+            <div class="desc">{{ obj.short_desc }}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

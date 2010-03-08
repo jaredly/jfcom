@@ -1,0 +1,9 @@
+<div id="menu">
+    <ul class="menu-top">
+        {% for item in navtree %}
+            <li class="{% if item.selected_main %}selected {% endif %}menu-item">
+                <a href="{{ item.url }}">{{ item.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

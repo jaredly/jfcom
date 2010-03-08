@@ -1,0 +1,25 @@
+
+{% extends "index.html" %}
+
+{% block title %}{{object.title}}{% endblock %}
+
+{% block smalltitle %}{{ object.title }}{% endblock %}
+
+{% block content %}
+
+<div class="meta">
+    <div class="subtext">
+        <span class="small">{{ object.created|date:"M d, Y" }}</span>
+        <div class="subtext">
+            by <a href="/about/{{ object.author }}">{{ object.author|title }}</a>
+        </div>
+    </div>
+    <div class="post-body">
+        {{object.body|safe|linebreaks}}
+    </div>
+    {% if user.is_staff %}
+        <a href="/admin/blog/post/{{ object.id }}/">[edit]</a>
+    {% endif %}
+</div>
+
+{% endblock %}

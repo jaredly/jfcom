@@ -1,0 +1,18 @@
+
+.project {
+    border-bottom: #999;
+    clear:both;
+    margin:25px 0;
+
+}
+
+.project-image {
+    float: left;
+    margin-bottom: 40px;
+    margin-right: 15px;
+    margin-top: -25px;
+}
+
+.project-image img {
+    border:1px solid #999;
+}

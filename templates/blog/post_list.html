@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title %}{{block.super}} - Blog{% endblock %}
+{% block smalltitle %}blog{% endblock %}
+
+{% block content %} 
+    {% for obj in object_list %} 
+        <div class="post">
+            <div class="post-title">
+                <a href="{{obj.get_absolute_url}}">{{obj.title}}</a>
+                <span class="small">{{ obj.created|date:"M d, Y" }}</span>
+            </div>
+            <div class="post-body">
+                {{obj.tease|linebreaksbr}}
+            </div>
+            <div class="subtext">
+                by <a href="/about/{{ obj.author }}">{{ obj.author|title }}</a>
+            </div>
+        </div>
+    {% empty %} 
+        <div class="noposts">No Blog Posts Found</div>
+    {% endfor %} 
+{% endblock %}

@@ -1,0 +1,36 @@
+
+{% extends "index.html" %}
+
+{% block title %}{{project.title}}{% endblock %}
+
+{% block smalltitle %}{{ project.title }}{% endblock %}
+
+{% block bodyclasses %}projects{% endblock %}
+
+{% block content %}
+<div class="meta">
+    <div class="subtext">
+        <span class="small">{{ project.created|date:"M d, Y" }}</span>
+        <div class="subtext">
+            by <a href="/about/{{ project.author }}">{{ project.author|title }}</a>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="project-image">
+            <a href="{{ project.url }}">
+                <img src="{{ project.image.url }}" title="{{project.title}}"/>
+            </a>
+        </div>
+        {{project.description|safe|linebreaks}}
+        {% if project.source %}
+            <br/><a href="{{ project.source.url }}">View source</a>
+        {% endif %}
+        {% if project.url %}
+            <br/><a href="{{ project.url }}">Go to Project</a>
+        {% endif %}
+    </div>
+    {% if user.is_staff %}
+        <a href="/admin/myprojects/project/{{ project.id }}/">[edit]</a>
+    {% endif %}
+</div>
+{% endblock %}
