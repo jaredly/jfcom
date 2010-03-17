@@ -1,4 +1,5 @@
 # Django settings for jfcom project.
+print 'top'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -109,8 +110,17 @@ INSTALLED_APPS = (
     'tracker',
     'tagging',
     'todo',
+    'photologue',
+    'smug',
+
     # mine
     'appsettings',
     'feedback',
     'myprojects',
 )
+
+from appsettings.user import settings
+smug = settings.smug
+smug.REPOSITORIES = {'hi':'ho'}
+smug.CACHE_TIME = 10
+print 'hello!'

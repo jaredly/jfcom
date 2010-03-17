@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 import os
+print 'urls...'
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -18,6 +19,7 @@ urlpatterns = patterns('',
     (r'^feedback/', include('feedback.urls')),
     (r'^settings/', include('appsettings.urls')),
     (r'^projects/', include('myprojects.urls')),
+    (r'^photologue/', include('photologue.urls')),
     # Example:
     # (r'^jfcom/', include('jfcom.foo.urls')),
     #(r'^media/(?P<path>.*)$', 'django.views.static.serve',

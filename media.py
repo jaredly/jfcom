@@ -40,7 +40,6 @@ def get_path(path, basepath):
             return os.path.join(moddir, 'media', *pathsplit[1:])
         except AttributeError:
             continue
-    return os.path.join(basepath, path)
 
 
 def serve_apps(request, path, document_root=None):
@@ -64,6 +63,8 @@ def serve_apps(request, path, document_root=None):
     ADMIN_MEDIA_PREFIX = '/media/admin/'
     """
     abspath = get_path(path, document_root) or ''
+    if not abspath or not os.path.exists(abspath):
+        abspath = os.path.join(document_root, path)
     if not os.path.exists(abspath):
         raise Http404("No media found for path %s (tried '%s')" % (path, abspath))
     if os.path.isdir(abspath):
