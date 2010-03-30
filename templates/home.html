@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block title %}Jared|Forsyth{% endblock %}
+{% block smalltitle %}Jared|Forsyth{% endblock %}
+
+{% block bodyclasses %}home{% endblock %}
+
+{% block content %}
+
+{% for item in projects %}
+    <div class="home-project-image">
+        <a href="{{item.get_absolute_url}}">
+            <img src="{{item.image.url}}" title="{{image.title}}"/>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -110,8 +110,6 @@ INSTALLED_APPS = (
     'tracker',
     'tagging',
     'todo',
-    'photologue',
-    'smug',
 
     # mine
     'appsettings',

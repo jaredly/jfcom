@@ -1,6 +1,7 @@
 
 body {
-    font-family:sans-serif;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:80%;
 }
 
 #title {
@@ -34,6 +35,7 @@ body {
 #content {
     padding:15px;
     border:1px solid #999;
+    margin-bottom:50px;
 }
 
 a {
@@ -43,6 +45,26 @@ a {
 
 a:visited {
     color:#FDB813;
+}
+
+/** home page **/
+
+body.home .home-project-image {
+    float:left;
+    width:125px;
+    height:125px;
+    border:1px solid #ccc;
+    margin:0 5px 5px 0;
+}
+
+body.home #content {
+    height:400px;
+    padding:0px;
+    border:none;
+}
+
+body.home #main {
+
 }
 
 /** blog **/
@@ -85,6 +107,6 @@ pre {
     overflow:auto;
 }
 
-p {
-    line-height: 2em;
+p, #content {
+    line-height: 1.5;
 }

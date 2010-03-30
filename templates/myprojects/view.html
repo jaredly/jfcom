@@ -1,5 +1,6 @@
 
 {% extends "index.html" %}
+{% load markup %}
 
 {% block title %}{{project.title}}{% endblock %}
 
@@ -16,17 +17,19 @@
         </div>
     </div>
     <div class="post-body">
+        <div class="meta">
         <div class="project-image">
             <a href="{{ project.url }}">
                 <img src="{{ project.image.url }}" title="{{project.title}}"/>
             </a>
         </div>
-        {{project.description|safe|linebreaks}}
+        {% if project.url %}
+        <br/><a href="{{ project.url }}">{{project.url}}</a>
+        {% endif %}
+    </div>
+        {{project.description|restructuredtext}}
         {% if project.source %}
             <br/><a href="{{ project.source.url }}">View source</a>
-        {% endif %}
-        {% if project.url %}
-            <br/><a href="{{ project.url }}">Go to Project</a>
         {% endif %}
     </div>
     {% if user.is_staff %}
