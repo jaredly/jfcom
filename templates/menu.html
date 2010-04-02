@@ -1,8 +1,8 @@
 <div id="menu">
     <ul class="menu-top">
-        {% for item in navtree %}
+        {% for item in navbar|dictsort:"order" %}
             <a href="{{ item.url }}">
-                <li class="{% if item.selected_main %}selected {% endif %}menu-item">
+                <li class="{% if item.selected %}selected {% endif %}menu-item">
                     {{ item.name }}
                 </li>
             </a>
