@@ -13,6 +13,8 @@ Apps currently used (outside of contrib):
 - feedback_
 - myprojects_
 
+
+
 .. _basic.blog: http://code.google.com/p/django-basic-apps/
 .. _navbar: http://code.google.com/p/django-navbar/
 .. _tagging: http://code.google.com/p/django-tagging/
