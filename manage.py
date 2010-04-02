@@ -1,4 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python2.6
+import sys
+sys.path.append('/home1/marketr5/python')
+sys.path.append('/home1/marketr5/lib/python')
+sys.path.append('/home1/marketr5/lib/python2.4/site-packages')
+import PIL
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.

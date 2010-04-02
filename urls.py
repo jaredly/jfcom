@@ -1,6 +1,5 @@
 from django.conf.urls.defaults import *
 import os
-print 'urls...'
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -23,7 +22,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     (r'^admin/', include(admin.site.urls)),
-    (r'^media/(?P<path>.*)$', media.serve_apps, {'document_root' : settings.MEDIA_ROOT}),
+    #(r'^media/(?P<path>.*)$', media.serve_apps, {'document_root' : settings.MEDIA_ROOT}),
 )
 #if settings.DEBUG or True:
 #    urlpatterns += patterns((r'^media/(?P<path>.*)$', media.serve_apps, {'document_root' : settings.MEDIA_ROOT}))

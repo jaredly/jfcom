@@ -1,4 +1,6 @@
 # Django settings for jfcom project.
+import os
+base = os.path.dirname(__file__)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -10,7 +12,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'my.db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = os.path.join(base, 'my.db')             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -46,7 +48,7 @@ MEDIA_URL = '/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/admin_media/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'ix*p@k-d&26+@8aq)&0l*=&h38^&puc54bx%b!m!_#4nh)v5bo'
@@ -118,4 +120,3 @@ from appsettings.user import settings
 smug = settings.smug
 smug.REPOSITORIES = {'hi':'ho'}
 smug.CACHE_TIME = 10
-print 'hello!'
