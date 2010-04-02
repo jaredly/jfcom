@@ -1,0 +1,23 @@
+`JaredForsyth.com <http://new.jaredforsyth.com>`_
+=================================================
+
+I had some trouble getting my site up, running, and configured, so I decided
+to share the fruits with everyone :)
+
+Apps currently used (outside of contrib):
+
+- basic.blog_
+- navbar_
+- tagging_
+- appsettings_
+- feedback_
+- myprojects_
+
+.. _basic.blog: http://code.google.com/p/django-basic-apps/
+.. _navbar: http://code.google.com/p/django-navbar/
+.. _tagging: http://code.google.com/p/django-tagging/
+.. _appsettings: http://github.com/jabapyth/django-appsettings
+.. _feedback: http://github.com/jabapyth/django-feedback
+.. _myprojects: http://github.com/jabapyth/django-myprojects
+
+- 
