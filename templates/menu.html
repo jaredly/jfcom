@@ -1,11 +1,13 @@
 <div id="menu">
     <ul class="menu-top">
-        {% for item in navbar|dictsort:"order" %}
-            <a href="{{ item.url }}">
-                <li class="{% if item.selected %}selected {% endif %}menu-item">
-                    {{ item.name }}
-                </li>
-            </a>
-        {% endfor %}
+        {% if navbar %}
+            {% for item in navbar|dictsort:"order" %}
+                <a href="{{ item.url }}">
+                    <li class="{% if item.selected %}selected {% endif %}menu-item">
+                        {{ item.name }}
+                    </li>
+                </a>
+            {% endfor %}
+        {% endif %}
     </ul>
 </div>

@@ -17,10 +17,12 @@
         {% block extrahead %}{% endblock %}
         {% include "feedback/header.html" %}
     </head>
-    <body class="{% block bodyclasses %}{% endblock %}">
+    <body class="{% block body_class %}{{request.META.REQUEST_URI|slugify}}{% endblock %}">
         <div id="main">
+            
             {% block notitle %}
                 <div id="smalltitle">
+                    {% block content_title %}{% endblock %}
                     {% block smalltitle %}{% endblock %}
                 </div>
             {% endblock %}

@@ -6,7 +6,7 @@ body.old {
 }
 
 body {
-    color: #888;
+    color: #666;
     font: normal normal normal 15px Verdana, Geneva, Arial, sans-serif;
 }
 
@@ -27,6 +27,17 @@ body {
     border-bottom: 1px solid #999;
     margin-bottom: 5px;
     padding-bottom: 3px;
+}
+
+#smalltitle h2 {
+    font-size:inherit;
+    font-weight:inherit;
+    margin:0;
+    padding:0;
+}
+
+body.post_archive_day #smalltitle {
+    font-size:1.8em;
 }
 
 #main {
