@@ -1,5 +1,4 @@
 # Django settings for jfcom project.
-print 'top'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -107,9 +106,7 @@ INSTALLED_APPS = (
 
     'basic.blog',
     'navbar',
-    'tracker',
     'tagging',
-    'todo',
 
     # mine
     'appsettings',

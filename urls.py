@@ -15,7 +15,7 @@ import views
 urlpatterns = patterns('',
     (r'^$', views.home),
     (r'^blog/', include('basic.blog.urls')),
-    (r'^todo/', include('todo.urls')),
+    # (r'^todo/', include('todo.urls')),
     (r'^feedback/', include('feedback.urls')),
     (r'^settings/', include('appsettings.urls')),
     (r'^projects/', include('myprojects.urls')),

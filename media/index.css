@@ -1,8 +1,15 @@
 
-body {
+body.old {
     font-family:'Helvetica Neue', Arial, sans-serif;
     font-size:80%;
+    font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
 }
+
+body {
+    color: #888;
+    font: normal normal normal 15px Verdana, Geneva, Arial, sans-serif;
+}
+
 
 #title {
     position:absolute;
