@@ -1,5 +1,6 @@
 
 {% extends "index.html" %}
+{% load markup %}
 
 {% block title %}{{object.title}}{% endblock %}
 
@@ -15,7 +16,7 @@
         </div>
     </div>
     <div class="post-body">
-        {{object.body|safe|linebreaks}}
+        {{object.body|restructuredtext}}
     </div>
     {% if user.is_staff %}
         <a href="/admin/blog/post/{{ object.id }}/">[edit]</a>

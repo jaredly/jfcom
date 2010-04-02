@@ -3,6 +3,8 @@
 {% block title %}{{flatpage.title}}{% endblock %}
 {% block smalltitle %}{{flatpage.title}}{% endblock %}
 
+{% load markup %}
+
 {% block content %}
-{{flatpage.content}}
+{{flatpage.content|restructuredtext}}
 {% endblock %}
