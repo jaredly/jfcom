@@ -1,0 +1,6 @@
+if [ -z "$1" ];then
+    echo "usage: killfcgi some.fcgi"
+    exit
+fi
+
+kill -9 `ps aux|grep marketr5|grep $1|egrep -v 'grep|killfcgi'|sed -e's/marketr5 *//'|sed -e's/\s.*//'`
