@@ -1,7 +1,7 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}Jared|Forsyth{% endblock %}
-{% block smalltitle %}Jared|Forsyth{% endblock %}
+{% block content_title %}Jared|Forsyth{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
@@ -9,8 +9,8 @@
 
 {% for item in projects %}
     <div class="home-project-image">
-        <a href="{{item.get_absolute_url}}">
-            <img src="{{item.image.url}}" title="{{image.title}}"/>
+        <a href="{{ item.get_absolute_url }}">
+            <img src="{{ item.image.url }}" title="{{ image.title }}"/>
         </a>
     </div>
 {% endfor %}

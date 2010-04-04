@@ -1,0 +1,15 @@
+# I'm assuming you aren't running this in a subdirectory...that gets tricky
+AddHandler fcgid-script .fcgi
+Options +SymLinksIfOwnerMatch
+## rewrite everything that's not in media or adminmedia to 
+## be handled by django
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(media/.*)$ - [L]
+RewriteRule ^(adminmedia/.*)$ - [L]
+# To add a directory to ignore, just do the following
+# RewriteRule ^(example/.*)$ - [L]
+RewriteCond %{REQUEST_URI} !(jfcom.fcgi)
+RewriteRule ^(.*)$ jfcom.fcgi/$1 [L]
+
+
