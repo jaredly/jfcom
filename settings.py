@@ -1,4 +1,4 @@
-# Django settings for jfcom project.
+# Django settings for jaredforsyth.com project.
 import os
 base = os.path.dirname(__file__)
 
@@ -65,7 +65,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'jfcom.urls'
+ROOT_URLCONF = 'jaredforsyth.urls'
 
 import os
 TEMPLATE_DIRS = (
@@ -115,7 +115,4 @@ INSTALLED_APPS = (
     'myprojects',
 )
 
-from appsettings.user import settings
-smug = settings.smug
-smug.REPOSITORIES = {'hi':'ho'}
-smug.CACHE_TIME = 10
+BLOG_PAGESIZE = 5

@@ -23,4 +23,10 @@
     {% empty %} 
         <div class="noposts">No Blog Posts Found</div>
     {% endfor %} 
+    {% if has_previous %}
+        <a href="/blog/page/{{ previous }}/">&lt; previous</a>
+    {% endif %}
+    {% if has_next %}
+        <a href="/blog/page/{{ next }}/">next &gt;</a>
+    {% endif %}
 {% endblock %}
