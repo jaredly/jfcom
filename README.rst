@@ -18,12 +18,10 @@ use::
 
     ./manage.py loaddata inital.json
 
-
-.. _basic.blog: http://code.google.com/p/django-basic-apps/
+.. _basic.blog: http://github.com/jabapyth/django-basic-apps
 .. _navbar: http://code.google.com/p/django-navbar/
 .. _tagging: http://code.google.com/p/django-tagging/
 .. _appsettings: http://github.com/jabapyth/django-appsettings
 .. _feedback: http://github.com/jabapyth/django-feedback
 .. _myprojects: http://github.com/jabapyth/django-myprojects
 
-- 
