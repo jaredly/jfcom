@@ -1,10 +1,11 @@
+{% extends "base.html" %}
 
-{% extends "index.html" %}
 {% load markup %}
+{% load blog %}
 
-{% block title %}{{object.title}}{% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
 
-{% block smalltitle %}{{ object.title }}{% endblock %}
+{% block content_title %}{{ object.title }}{% endblock %}
 
 {% block content %}
 
@@ -15,12 +16,14 @@
             by <a href="/about/{{ object.author }}">{{ object.author|title }}</a>
         </div>
     </div>
-    <div class="post-body">
-        {{object.body|restructuredtext}}
-    </div>
-    {% if user.is_staff %}
-        <a href="/admin/blog/post/{{ object.id }}/">[edit]</a>
-    {% endif %}
 </div>
+
+<div class="post-body">
+    {{ object.body|markup:object.format }}
+</div>
+
+{% if user.is_staff %}
+    <a href="/admin/blog/post/{{ object.id }}/">[edit]</a>
+{% endif %}
 
 {% endblock %}

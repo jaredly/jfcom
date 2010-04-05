@@ -1,20 +1,23 @@
 {% extends "index.html" %}
 
-{% block title %}{{block.super}} - Blog{% endblock %}
-{% block smalltitle %}blog{% endblock %}
+{% load markup %}
+{% load blog %}
+
+{% block title %}{{ block.super }} - Blog{% endblock %}
+{% block content_title %}blog{% endblock %}
 
 {% block content %} 
-    {% for obj in object_list %} 
+    {% for object in object_list %} 
         <div class="post">
             <div class="post-title">
-                <a href="{{obj.get_absolute_url}}">{{obj.title}}</a>
-                <span class="small">{{ obj.created|date:"M d, Y" }}</span>
+                <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                <span class="small">{{ object.created|date:"M d, Y" }}</span>
             </div>
             <div class="post-body">
-                {{obj.tease|linebreaksbr}}
+                {{ object.tease|markup:object.format }}
             </div>
             <div class="subtext">
-                by <a href="/about/{{ obj.author }}">{{ obj.author|title }}</a>
+                by <a href="/about/{{ object.author }}">{{ object.author|title }}</a>
             </div>
         </div>
     {% empty %} 

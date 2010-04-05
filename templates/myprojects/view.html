@@ -1,13 +1,13 @@
 
 {% extends "index.html" %}
 
-{% load markup %}
+{% load blog %}
 
-{% block title %}{{project.title}}{% endblock %}
+{% block title %}{{ project.title }}{% endblock %}
 
 {% block smalltitle %}{{ project.title }}{% endblock %}
 
-{% block body_class %}projects{% endblock %}
+{% block body_class %}{{ block.super }} projects{% endblock %}
 
 {% block content %}
 <div class="meta">
@@ -25,10 +25,10 @@
             </a>
         </div>
         {% if project.url %}
-        <br/><a href="{{ project.url }}">{{project.url}}</a>
+            <a href="{{ project.url }}">{{ project.url }}</a>
         {% endif %}
     </div>
-        {{project.description|restructuredtext}}
+        {{ project.description|markup:project.format }}
         {% if project.source %}
             <br/><a href="{{ project.source.url }}">View source</a>
         {% endif %}
