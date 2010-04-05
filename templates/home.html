@@ -13,6 +13,8 @@
             <img src="{{ item.image.url }}" title="{{ image.title }}"/>
         </a>
     </div>
+{% empty %}
+    Sorry, no projects up yet.
 {% endfor %}
 
 {% endblock %}

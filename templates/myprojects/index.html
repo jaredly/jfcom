@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load markup %}
 {% load blog %}
 
@@ -26,5 +26,7 @@
             <div class="desc">{{ obj.short_desc|markup:"rest" }}</div>
         </div>
     </div>
+    {% empty %}
+        No projects created...
     {% endfor %}
 {% endblock %}
