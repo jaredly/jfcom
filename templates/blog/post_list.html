@@ -11,7 +11,7 @@
         <div class="post">
             <div class="post-title">
                 <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
-                <span class="small">{{ object.created|date:"M d, Y" }}</span>
+                <span class="small">{{ object.publish|date:"M d, Y" }}</span>
             </div>
             <div class="post-body">
                 {{ object.tease|markup:object.format }}
