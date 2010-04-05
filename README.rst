@@ -13,6 +13,10 @@ Apps currently used (outside of contrib):
 - feedback_
 - myprojects_
 
+Initial data (the about page and menu items) are in initial.json. To load,
+use::
+
+    ./manage.py loaddata inital.json
 
 
 .. _basic.blog: http://code.google.com/p/django-basic-apps/
