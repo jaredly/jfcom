@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.syndication',
     'django.contrib.webdesign',
+    'django.contrib.redirects',
 
     'basic.blog',
     'navbar',
