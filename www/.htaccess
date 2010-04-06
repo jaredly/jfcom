@@ -7,6 +7,7 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^(media/.*)$ - [L]
 RewriteRule ^(adminmedia/.*)$ - [L]
+RewriteRule ^(prog/.*)$ - [L]
 # To add a directory to ignore, just do the following
 # RewriteRule ^(example/.*)$ - [L]
 RewriteCond %{REQUEST_URI} !(jfcom.fcgi)
