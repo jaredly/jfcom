@@ -6,5 +6,12 @@
 {% load blog %}
 
 {% block content %}
-    {{ flatpage.content|markup:"rest" }}
+    <div class="page-body">
+        {{ flatpage.content|markup:"rest" }}
+    </div>
+    {% if user.is_staff %}
+        <div class="post">
+            <a href="/admin/flatpages/flatpage/{{ flatpage.id }}/">[edit]</a>
+        </div>
+    {% endif %}
 {% endblock %}
