@@ -1,51 +1,79 @@
 #!/usr/bin/env python
 
-try:
-    import settings # Assumed to be in the same directory.
-except ImportError:
-    import sys
-    sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. It appears you've customized things.\nYou'll have to run django-admin.py, passing it your settings module.\n(If the file settings.py does indeed exist, it's causing an ImportError somehow.)\n" % __file__)
-    raise
-    sys.exit(1)
+import tempfile
+import subprocess
+import string
+import sys
+import time
 
+import settings # Assumed to be in the same directory.
 from django.core.management import setup_environ
-
 setup_environ(settings)
 
 from basic.blog.models import Post
-import string
 
-posts = list(Post.objects.all())
+EDITOR = 'vim'
 
-for i,post in enumerate(posts):
-    print '%d) %s' % (i, post.title)
+def pick_object(model):
+    objects = list(model.objects.all())
 
-num = raw_input('post num:')
-if not num.isdigit():
-    print 'fail:',num
-num = int(num)
+    for i,object in enumerate(objects):
+        print '%d) %s' % (i, object.title)
 
-import tempfile
-import subprocess
+    num = raw_input('item num:')
+    if not num or not num.isdigit():
+        return False
+    num = int(num)
+    object = objects[num]
+    return object
 
-post = posts[num]
+from reversion.revisions import revision
 
-filename = tempfile.mktemp('.rst')
-open(filename,'w').write(post.body)
+@revision.create_on_success
+def edit_object(object, field, format='rest'):
+    ext = {'rest':'rst','mdown':'md','txtile':'txt','html':'html','plain':'txt'}
 
-import sys
+    filename = tempfile.mktemp('.' + ext[format])
+    original = getattr(object, field)
+    open(filename,'w').write(original)
 
-p = subprocess.Popen(('vim',filename),stdin=sys.stdin, stdout=sys.stdout, stderr=sys.stderr)
-p.wait()
+    p = subprocess.Popen((EDITOR, filename), stdin=sys.stdin, stdout=sys.stdout, stderr=sys.stderr)
+    p.wait()
 
-text = open(filename).read()
-if raw_input('post?').lower() in ('y','yes'):
-    post.body = text
-    post.save()
-else:
-    print 'junking'
+    text = open(filename).read()
+    if text == original:
+        return False
+    setattr(object, field, text)
+    object.save()
 
+import optparse
+def get_options():
+    p = optparse.OptionParser('usage: %prog [app] [model] [field]')
+    p.add_option('-a', '--app', dest='app', help='django application')
+    p.add_option('-m', '--model', dest='model', help='specify which model to edit')
+    p.add_option('-f', '--field', dest='field', help='specify which field to edit')
+    p.add_option('-n', '--num', dest='num', help='specify the object id to edit')
+    p.add_option('--search', dest='search', help='search objects for "field:text"')
 
+    options, pos = p.parse_args()
+    if len(pos):
+        raise Exception,'no positional arguments accepted: %s' % pos
+    return options
+
+def main():
+    options = get_options()
+    if not options.app:
+        app = pick_app()
+    else:
+        app = get_app(options.app)
+    if not options.model:
+        model = pick_model(app)
+    else:
+        model = get_model(app, options.model)
+    if not options.num:
+        
+    obj = pick_object(model)
+    edit_object
 
 
 # vim: et sw=4 sts=4
