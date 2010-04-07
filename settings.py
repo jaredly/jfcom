@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'basic.blog',
     'navbar',
     'tagging',
+    'reversion',
 
     # mine
     'appsettings',
