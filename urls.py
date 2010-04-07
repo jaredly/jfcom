@@ -3,6 +3,8 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
+import admin as myadmin
+
 from basic.blog.feeds import BlogPostsFeed, BlogPostsByCategory
 
 feeds = {
@@ -24,3 +26,8 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 
+if settings.DEBUG:
+    from django.views.static import serve
+    urlpatterns += patterns('',
+            (r'^media/(?P<path>.*)$', serve, {'document_root' : settings.MEDIA_ROOT, 'show_indexes':True}),
+    )
