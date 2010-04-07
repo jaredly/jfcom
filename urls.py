@@ -26,6 +26,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 
+from django.conf import settings
 if settings.DEBUG:
     from django.views.static import serve
     urlpatterns += patterns('',
