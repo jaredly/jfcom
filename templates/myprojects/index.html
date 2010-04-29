@@ -13,7 +13,7 @@
 {% block body_class %}{{ block.super }} projects{% endblock %}
 
 {% block content %}
-    {% for obj in projects %}
+    {% for obj in projects|dictsortreversed:"time" %}
     <div class="project">
         <div class="project-image">
             <a href="{{ obj.get_absolute_url }}">
