@@ -1,5 +1,8 @@
 # Django settings for jaredforsyth.com project.
-import os
+from PIL import Image
+import sys
+sys.modules['Image'] = Image
+import os,sys
 base = os.path.dirname(__file__)
 
 DEBUG = False
