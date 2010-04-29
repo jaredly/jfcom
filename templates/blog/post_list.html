@@ -15,6 +15,7 @@
             </div>
             <div class="post-body">
                 {{ object.tease|markup:object.format }}
+                <a href="{{ object.get_absolute_url }}">[read more]</a>
             </div>
             <div class="subtext">
                 by <a href="/about/{{ object.author }}">{{ object.author|title }}</a>
