@@ -1,9 +1,8 @@
-#!/usr/bin/python2.6
-import sys
-sys.path.append('/home1/marketr5/python')
-sys.path.append('/home1/marketr5/lib/python')
-sys.path.append('/home1/marketr5/lib/python2.4/site-packages')
+#!/usr/bin/env python2.6
 import PIL
+from PIL import Image
+import sys
+sys.modules['Image'] = Image
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.
