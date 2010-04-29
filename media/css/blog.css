@@ -1,0 +1,61 @@
+/** blog **/
+
+.post-title {
+}
+
+.post-title a {
+    background-image:url(images/block_sm.png);
+    background-position: -2px -20px;
+    background-repeat:no-repeat;
+    padding-left:14px;
+}
+
+.post-title a:visited {
+    background-position: -2px -3px;
+}
+
+.post-body {
+    margin: 5px 0;
+}
+
+.post-body h1 {
+    font-size:1.5em;
+}
+
+.post-meta {
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
+    font-size: 80%;
+    padding-bottom: 2px;
+    text-transform: lowercase;
+}
+
+.post-list .post {
+    border-bottom: 1px solid #666;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.post-list .post .read-more {
+    text-align:right;
+    font-size:90%;
+    margin-top:-1.5em;
+}
+
+.post-list .post .post-title {
+    font-size: 1.2em;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.post-list .post .subtext {
+    font-size: 0.8em;
+}
+
+#smalltitle {
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    font-size:1.7em;
+}
