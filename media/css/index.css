@@ -85,42 +85,6 @@ body.home #main {
 
 }
 
-/** blog **/
-
-.post-title {
-}
-
-.post-title a {
-    background-image:url(images/block_sm.png);
-    background-position: -2px -20px;
-    background-repeat:no-repeat;
-    padding-left:14px;
-}
-
-.post-title a:visited {
-    background-position: -2px -3px;
-}
-
-.post-body {
-    margin: 5px 0;
-}
-
-.post-body h1 {
-    font-size:1.5em;
-}
-
-.post-meta {
-    border-bottom: 1px solid #666;
-    border-top: 1px solid #666;
-    font-size: 80%;
-    padding-bottom: 2px;
-    text-transform: lowercase;
-}
-
-.post {
-    padding-bottom:10px;
-}
-
 .small {
     color: #aaa;
 }
@@ -139,4 +103,27 @@ pre {
 
 p, #content {
     line-height: 1.5;
+}
+
+#rss {
+    position:fixed;
+    top:5px;
+    right:5px;
+}
+
+.note {
+    border: 1px solid #666;
+    font-size: 80%;
+    margin: 0 10px;
+}
+
+.note .first.admonition-title {
+    background-color: #999;
+    color: white;
+    margin: 0px;
+    padding: 0px 9px;
+}
+
+.note .last {
+    margin: 10px;
 }
