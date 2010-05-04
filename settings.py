@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
 
     'basic.blog',
+    'basic.inlines',
     'navbar',
     'tagging',
     'reversion',

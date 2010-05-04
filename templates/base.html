@@ -5,7 +5,7 @@
         <title>{% block title %}Jared|Forsyth{% endblock %}</title>
         <link rel="openid.server" href="http://www.myopenid.com/server" />
         <link rel="openid.delegate" href="http://jabapyth.myopenid.com/" />
-        <link rel="alternate" type="application/rss+xml" title="Jared|Forsyth" href="http://jaredforsyth.com/feeds/latest/" />
+        <link rel="alternate" type="application/rss+xml" title="Jared|Forsyth" href="http://feeds.feedburner.com/JaredforsythFeed" />
         {% block css %}
         <link href="/media/css/index.css" rel="stylesheet"/>
         <link href="/media/css/menu.css" rel="stylesheet"/>
@@ -41,6 +41,9 @@
             {% block footer %}
                 This site is open source. really? <a href="http://github.com/jabapyth/jfcom">really.</a>
             {% endblock %}
+        </div>
+        <div id="rss">
+            <a href="http://feeds.feedburner.com/JaredforsythFeed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
         </div>
 
     {% block analytics %}
