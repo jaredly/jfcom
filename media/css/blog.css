@@ -22,6 +22,12 @@
     font-size:1.5em;
 }
 
+.post-body img.first {
+    padding: 0 20px 20px 0;
+    float:left;
+    vertical-align:top;
+}
+
 .post-meta {
     border-bottom: 1px solid #666;
     border-top: 1px solid #666;
