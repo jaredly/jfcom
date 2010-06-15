@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+
+{% load markup %}
+{% load blog %}
+
+{% block title %}Posts for {{ category.title }}{% endblock %}
+{% block content_title %}Posts for {{ category.title }}{% endblock %}
+
+{% block content %} 
+    <div class="post-list">
+    {% for object in object_list %} 
+        <div class="post">
+            <div class="post-title">
+                <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+            </div>
+            <div class="subtext">
+                by <a href="/about/{{ object.author }}">{{ object.author|title }}</a>
+                <span class="small">on {{ object.publish|date:"M d, Y" }}</span>
+            </div>
+            <div class="post-body">
+                {{ object.tease|markup:object.format }}
+            </div>
+            <div class="read-more">
+                <a href="{{ object.get_absolute_url }}">[read more]</a>
+            </div>
+        </div>
+    {% empty %} 
+        <div class="noposts">No Blog Posts Found</div>
+    {% endfor %} 
+    </div>
+    {% if has_previous %}
+        <a href="/blog/page/{{ previous }}/">&lt; newer</a>
+    {% endif %}
+    {% if has_next %}
+        <a href="/blog/page/{{ next }}/">older &gt;</a>
+    {% endif %}
+{% endblock %}
