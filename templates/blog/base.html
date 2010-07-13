@@ -4,3 +4,15 @@
 {{ block.super }}
 <link rel='stylesheet' href='/media/css/blog.css'/>
 {% endblock %}
+
+{% block left_of_content %}
+
+    {% for obj in ctx_projects|dictsortreversed:"time" %}
+    <div class="project-image">
+        <a href="{{ obj.get_absolute_url }}">
+            <img src="{{ obj.image.url }}" title="{{ obj.title }}"/>
+        </a>
+    </div>
+    {% endfor %}
+
+{% endblock %}

@@ -22,6 +22,10 @@
     <body  id="{% block body_id %}{% endblock %}" class="{% block body_class %}{{request.META.REQUEST_URI|slugify}}{% endblock %}">
 {% block body %}
 
+        <div id="left_of_content">
+            {% block left_of_content %}
+            {% endblock %}
+        </div>
         <div id="main">
             {% block notitle %}
                 <div id="smalltitle">

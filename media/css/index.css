@@ -15,6 +15,13 @@ body {
     font: normal normal normal 15px Verdana, Geneva, Arial, sans-serif;
 }
 
+#left_of_content {
+    left: 50%;
+    margin-left: -390px;
+    margin-top: -160px;
+    position: absolute;
+    top: 50%;
+}
 
 #title {
     position:absolute;

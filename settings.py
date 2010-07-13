@@ -89,6 +89,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "navbar.context_processors.navbar",
     "navbar.context_processors.navtree",
     "navbar.context_processors.navbars",
+    "myprojects.extras.projects",
 )
 #admin/        comments/     databrowse/   gis/          __init__.pyc  redirects/    sites/        
 #admindocs/    contenttypes/ flatpages/    humanize/     localflavor/  sessions/     syndication/  
