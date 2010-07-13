@@ -4,6 +4,7 @@
 }
 
 .post-title a {
+    font-family: Verdana, Geneva, Arial, sans-serif;
     background-image:url(images/block_sm.png);
     background-position: -2px -20px;
     background-repeat:no-repeat;
@@ -20,6 +21,15 @@
 
 .post-body h1 {
     font-size:1.5em;
+    border-bottom: 1px solid;
+}
+
+.post-body h2 {
+    font-size:1.2em;
+}
+
+.post-body .codeblock {
+    font-size: 85%;
 }
 
 .post-body img.first {

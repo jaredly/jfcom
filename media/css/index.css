@@ -5,6 +5,11 @@ body.old {
     font-family: 'Lucida Grande', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, Arial, sans-serif;
 }
 
+#dsq-content .dsq-sharing-options button.dsq-button-small {
+    height: 30px !important;
+    width: 140px !important;
+}
+
 body {
     color: #666;
     font: normal normal normal 15px Verdana, Geneva, Arial, sans-serif;
@@ -103,6 +108,7 @@ pre {
 
 p, #content {
     line-height: 1.5;
+    font-family: Georgia;
 }
 
 #rss {

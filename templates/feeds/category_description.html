@@ -1,5 +1,7 @@
 
 {% load blog %}
 
+This post <a href="{{obj.get_absolute_url}}">looks better on my blog</a> <br/>
+
 {{ obj.body|markup:obj.format }}
 
