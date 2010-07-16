@@ -6,6 +6,13 @@
 {% block body_class %}home{% endblock %}
 
 {% block content %}
+<!--
+{% for post in posts %}
+    <div class="post">
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </div>
+{% endfor %}
+-->
 
 {% for item in projects %}
     <div class="home-project-image">
