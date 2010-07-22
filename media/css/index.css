@@ -10,6 +10,14 @@ body.old {
     width: 140px !important;
 }
 
+div.donate {
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    font-size: 85%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
 body {
     color: #666;
     font: normal normal normal 15px Verdana, Geneva, Arial, sans-serif;
