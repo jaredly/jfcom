@@ -1,7 +1,7 @@
 # Django settings for jaredforsyth.com project.
-from PIL import Image
+#from PIL import Image
 import sys
-sys.modules['Image'] = Image
+#sys.modules['Image'] = Image
 import os,sys
 base = os.path.dirname(__file__)
 
@@ -122,4 +122,4 @@ INSTALLED_APPS = (
     'myprojects',
 )
 
-BLOG_PAGESIZE = 5
+BLOG_PAGESIZE = 15

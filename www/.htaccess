@@ -11,6 +11,6 @@ RewriteRule ^(prog/.*)$ - [L]
 # To add a directory to ignore, just do the following
 # RewriteRule ^(example/.*)$ - [L]
 RewriteCond %{REQUEST_URI} !(jfcom.fcgi)
-RewriteRule ^(.*)$ jfcom.fcgi/$1 [L]
+RewriteRule ^(.*)$ /jfcom.fcgi/$1 [L]
 
 

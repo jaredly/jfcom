@@ -37,10 +37,23 @@
     text-transform:lowercase;
 }
 
+#menu li a {
+    color:#999;
+    text-transform:lowercase;
+}
+
 #menu a li.menu-item.selected {
     color:white;
 }
 
+#menu li.menu-item.selected a {
+    color:white;
+}
+
 #menu a li.menu-item:hover {
+    color:white;
+}
+
+#menu li.menu-item:hover a {
     color:white;
 }

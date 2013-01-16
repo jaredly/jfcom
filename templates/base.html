@@ -20,6 +20,9 @@
         {% include "feedback/header.html" %}
     </head>
     <body  id="{% block body_id %}{% endblock %}" class="{% block body_class %}{{request.META.REQUEST_URI|slugify}}{% endblock %}">
+        <div id="im-gone">
+            If things look a little dusty around here, it's because I'm <a href="http://jaredforsyth.com/mission/">away on a mission</a> for two years. I'll be back in August 2012, but in the mean time feel free to <a href="http://github.com/jabapyth/">fork my projects</a> on github.
+        </div>
 {% block body %}
 
         <div id="left_of_content">

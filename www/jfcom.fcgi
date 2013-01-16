@@ -4,6 +4,7 @@ from os.path import expanduser
 
 #print 'Content-type:text/html\n'
 
+
 # Add a custom Python path.
 sys.path.insert(0, expanduser("~/python"))
 sys.path.insert(0, expanduser("~/lib/python"))
@@ -19,6 +20,5 @@ os.chdir(expanduser('~/django_apps'))
 
 # Set the DJANGO_SETTINGS_MODULE environment variable.
 os.environ['DJANGO_SETTINGS_MODULE'] = "jaredforsyth.settings"
-
 from django.core.servers.fastcgi import runfastcgi
 runfastcgi(method="threaded", daemonize="false")
